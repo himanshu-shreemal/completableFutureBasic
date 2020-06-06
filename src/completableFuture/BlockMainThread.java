@@ -15,7 +15,7 @@ public class BlockMainThread {
 	public static void testAsyncRunnableBlockMainThread() {
 		try {
 			CompletableFuture.runAsync(() -> {
-				System.out.println("I'll run in a separate thread than the main thread.");
+				System.out.println("I'll run in a separate thread than the main thread. But main thread will block till my execution");
 				try {
 					TimeUnit.SECONDS.sleep(2);
 					Stream.iterate(11, n -> ++n).limit(2).forEach(System.out::println);
